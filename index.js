@@ -1,7 +1,7 @@
 const express = require("express")
 const cors =  require("cors")
-const mysql = require("./DBConnection/index")
-const exc = require("./DBConnection/excecutions")
+const mysql = require("./src/DBConnection/index")
+const exc = require("./src/DBConnection/excecutions")
 const port = process.env.PORT || 4000;
 const app = express()
 
