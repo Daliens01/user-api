@@ -9,10 +9,10 @@ app.use(cors())
 app.get("/", (req, res) =>{
     res.send("Wellcome to Api-Esi-List");
 })
-app.get("/lic", (req,res)=>{
+app.get("/licenciatura", (req,res)=>{
     exc(mysql().db, req, res).licenciatura()
 })
-app.get("/pos", (req,res)=>{
+app.get("/posgrado", (req,res)=>{
     exc(mysql().db, req, res).posgrado()
 })
 app.listen(port, ()=> console.log("PORT YOU'RE USING IS:", port));
