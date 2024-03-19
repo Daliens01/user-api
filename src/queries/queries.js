@@ -1,5 +1,5 @@
 const queries = ()=>{
-    const date = "2024-02-28"
+    const date = "2024-03-19"
 
     const licenciatura = `SELECT u.username AS MATRICULA, CONCAT(u.firstname," ", u.lastname) AS ALUMNO, c.fullname AS CURSOS
     ,IF(DATEDIFF("${date}",FROM_UNIXTIME(timeaccess))>=9, CONCAT(DATEDIFF("${date}",FROM_UNIXTIME(timeaccess))," Días sin acceder"),"NUNCA") AS "ÚLTIMO ACCESO"
