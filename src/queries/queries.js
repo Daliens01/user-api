@@ -32,7 +32,9 @@ const queries = ()=>{
     AND (DATEDIFF("${date}",FROM_UNIXTIME(timeaccess)) >=9 OR DATEDIFF("${date}",FROM_UNIXTIME(timeaccess)) IS NULL)
     ORDER BY CURSOS ASC, ALUMNO;`
 
-    return {licenciatura,posgrado}
+    const threadsConnnected = "SHOW STATUS WHERE `variable_name` = 'Threads_connected';"
+
+    return {licenciatura,posgrado,threadsConnnected}
 }
 
 module.exports =  queries

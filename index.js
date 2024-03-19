@@ -15,4 +15,7 @@ app.get("/licenciatura", (req,res)=>{
 app.get("/posgrado", (req,res)=>{
     exc(mysql().db, req, res).posgrado()
 })
+app.get("/hilos", (req,res)=>{
+    exc(mysql().db, req, res).hilos()
+})
 app.listen(port, ()=> console.log("PORT YOU'RE USING IS:", port));

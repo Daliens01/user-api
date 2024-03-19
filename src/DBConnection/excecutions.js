@@ -14,7 +14,13 @@ const excecutions = (db, req,res)=>{
             else return res.json(data)
         })
     }
-    return{licenciatura, posgrado}
+    const hilos = () =>{
+        db.query(queries().threadsConnnected, (err, data) =>{
+            if(err) return res.json("error")
+            else return res.json(data)
+        })
+    }
+    return{licenciatura, posgrado,hilos}
 }
 
 module.exports = excecutions
