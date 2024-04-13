@@ -3,7 +3,17 @@ const queries = ()=>{
     const TodaysDate = `${fecha.getFullYear()}-${fecha.getMonth()+1 > 9?fecha.getMonth()+1:`0${fecha.getMonth()+1}`}-${fecha.getDate() > 9? fecha.getDate(): `0${fecha.getDate()}`}`;
     //bloque 1 24-24
     const licenciatura = `SELECT u.username AS MATRICULA, CONCAT(u.firstname," ", u.lastname) AS ALUMNO, c.fullname AS CURSOS
-    ,IF(DATEDIFF("${TodaysDate}",FROM_UNIXTIME(timeaccess))>=9, CONCAT(DATEDIFF("${TodaysDate}",FROM_UNIXTIME(timeaccess))," Días sin acceder"),"NUNCA") AS ACCESO
+    ,CASE
+	WHEN u.id =618 THEN "NO APLICA"
+	WHEN u.id =1461 THEN "NO APLICA"
+	WHEN u.id =748 THEN "NO APLICA"
+	WHEN u.id =1368 THEN "NO APLICA"
+	WHEN u.id =1142 THEN "NO APLICA"
+	WHEN u.id =915 THEN "NO APLICA"
+	WHEN u.id =1529 THEN "NO APLICA"
+	WHEN DATEDIFF("${TodaysDate}",FROM_UNIXTIME(timeaccess))>=9 THEN CONCAT(DATEDIFF("${TodaysDate}",FROM_UNIXTIME(timeaccess))," Días sin acceder")
+	ELSE "NUNCA"
+      END AS ACCESO
     FROM
     mdl_user u
     LEFT JOIN mdl_role_assignments r ON r.userid = u.id
@@ -19,7 +29,18 @@ const queries = ()=>{
     ORDER BY ALUMNO, CURSOS DESC;`
     //bloque 2 24-24
     const posgrado = `SELECT u.username AS MATRICULA, CONCAT(u.firstname," ", u.lastname) AS ALUMNO, c.fullname AS CURSOS
-    ,IF(DATEDIFF("${TodaysDate}",FROM_UNIXTIME(timeaccess))>=9, CONCAT(DATEDIFF("${TodaysDate}",FROM_UNIXTIME(timeaccess))," Días sin acceder"),"NUNCA") AS ACCESO
+    ,CASE
+	WHEN u.id =618 THEN "NO APLICA"
+	WHEN u.id =1461 THEN "NO APLICA"
+	WHEN u.id =748 THEN "NO APLICA"
+	WHEN u.id =1368 THEN "NO APLICA"
+	WHEN u.id =1142 THEN "NO APLICA"
+	WHEN u.id =915 THEN "NO APLICA"
+	WHEN u.id =1529 THEN "NO APLICA"
+    WHEN u.id =1480 THEN "NO APLICA"
+	WHEN DATEDIFF("${TodaysDate}",FROM_UNIXTIME(timeaccess))>=9 THEN CONCAT(DATEDIFF("${TodaysDate}",FROM_UNIXTIME(timeaccess))," Días sin acceder")
+	ELSE "NUNCA"
+      END AS ACCESO
     FROM
     mdl_user u
     LEFT JOIN mdl_role_assignments r ON r.userid = u.id
