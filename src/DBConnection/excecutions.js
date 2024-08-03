@@ -7,6 +7,12 @@ const excecutions = (db, req,res)=>{
             else return res.json(data)
         })
     }
+    const licenciaturaAdmin = ()=>{
+        db.query(queries().administrativosLicenciatura,(err, data)=>{
+            if(err) return res.json(err)
+            else return res.json(data)
+        })
+    }
     
     const posgrado = ()=>{
         db.query(queries().posgrado,(err, data)=>{
@@ -14,13 +20,20 @@ const excecutions = (db, req,res)=>{
             else return res.json(data)
         })
     }
+    const posgradoAdmin = ()=>{
+        db.query(queries().administrativosPosgrado,(err, data)=>{
+            if(err) return res.json("error")
+            else return res.json(data)
+        })
+    }
+
     const hilos = () =>{
         db.query(queries().threadsConnnected, (err, data) =>{
             if(err) return res.json("error")
             else return res.json(data)
         })
     }
-    return{licenciatura, posgrado,hilos}
+    return{licenciatura, posgrado,hilos, licenciaturaAdmin, posgradoAdmin}
 }
 
 module.exports = excecutions

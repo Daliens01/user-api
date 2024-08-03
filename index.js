@@ -13,8 +13,14 @@ app.get("/", (req, res) =>{
 app.get("/licenciatura", (req,res)=>{
     exc(mysql().db, req, res).licenciatura()
 })
+app.get("/adminlicenciatura", (req,res)=>{
+    exc(mysql().db, req, res).licenciaturaAdmin()
+})
 app.get("/posgrado", (req,res)=>{
     exc(mysql().db, req, res).posgrado()
+})
+app.get("/adminposgrado", (req,res)=>{
+    exc(mysql().db, req, res).posgradoAdmin()
 })
 app.get("/hilos", (req,res)=>{
     exc(mysql().db, req, res).hilos()
