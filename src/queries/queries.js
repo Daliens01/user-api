@@ -65,7 +65,7 @@ const queries = ()=>{
     LEFT JOIN mdl_user_lastaccess lt ON  lt.courseid = c.id AND lt.userid = u.id
     WHERE
     r.roleid = 5
-    AND c.id IN (1090,1091,1092,1093,1097,1094,1095,1096,1098,1099,1100,1101,1102)
+    AND c.id IN (1105,1106,1107,1109,1110,1111,1112,1113,1114,1115,1116,1117,1108)
     AND u.id NOT IN (618)
     AND (DATEDIFF("${TodaysDate}",FROM_UNIXTIME(timeaccess)) >=9 OR DATEDIFF("${TodaysDate}",FROM_UNIXTIME(timeaccess)) IS NULL)
     ORDER BY CURSOS ASC, ALUMNO;`
@@ -82,7 +82,7 @@ INNER JOIN mdl_role rl ON rl.id = r.roleid
 LEFT JOIN mdl_user_lastaccess lt ON  lt.courseid = c.id AND lt.userid = u.id
 WHERE
 r.roleid = 4
-AND c.id IN (1090,1091,1092,1093,1097,1094,1095,1096,1098,1099,1100,1101,1102)
+AND c.id IN (1105,1106,1107,1109,1110,1111,1112,1113,1114,1115,1116,1117,1108)
 AND u.id IN (476)
 ORDER BY CURSOS ASC, ALUMNO;`
     const threadsConnnected = "SHOW STATUS WHERE `variable_name` = 'Threads_connected';"
