@@ -23,7 +23,7 @@ const queries = ()=>{
     LEFT JOIN mdl_user_lastaccess lt ON  lt.courseid = c.id AND lt.userid = u.id
     WHERE
     r.roleid = 5
-    AND c.id IN (1308,1307,1306,1305,1304,1303,1302,1301,1300,1299,1298,1297,1296,1295,1294,1293,1292,1291,1290,1289,1288,1287,1286,1285)
+    AND c.id IN (1379,1378,1377,1376,1375,1374,1373,1372,1371,1370,1369,1368,1367,1366,1365,1364,1363,1362,1361,1360,1359,1358,1357,1356,1355,1354,1353)
     AND u.id NOT IN (618)
     AND (DATEDIFF("${TodaysDate}",FROM_UNIXTIME(timeaccess)) >=9 OR DATEDIFF("${TodaysDate}",FROM_UNIXTIME(timeaccess)) IS NULL)
     ORDER BY ALUMNO, CURSOS DESC;`
@@ -39,7 +39,7 @@ const queries = ()=>{
     LEFT JOIN mdl_user_lastaccess lt ON  lt.courseid = c.id AND lt.userid = u.id
     WHERE
     r.roleid = 4
-    AND c.id IN (1308,1307,1306,1305,1304,1303,1302,1301,1300,1299,1298,1297,1296,1295,1294,1293,1292,1291,1290,1289,1288,1287,1286,1285)
+    AND c.id IN (1379,1378,1377,1376,1375,1374,1373,1372,1371,1370,1369,1368,1367,1366,1365,1364,1363,1362,1361,1360,1359,1358,1357,1356,1355,1354,1353)
     AND u.id IN (55,497,1547)
     ORDER BY ALUMNO, CURSOS DESC;`
     //bloque 4 24-25
@@ -82,7 +82,7 @@ INNER JOIN mdl_role rl ON rl.id = r.roleid
 LEFT JOIN mdl_user_lastaccess lt ON  lt.courseid = c.id AND lt.userid = u.id
 WHERE
 r.roleid = 4
-AND c.id IN (1253,1254,1255,1257,1258,1259,1260,1261,1262,1263,1264,1265,1256)
+AND c.id IN (1321,1322,1323,1324,1325,1327,1326,1328,1329,1330,1331,1332,1333,1335,1336,1334)
 AND u.id IN (476)
 ORDER BY CURSOS ASC, ALUMNO;`
     const threadsConnnected = "SHOW STATUS WHERE `variable_name` = 'Threads_connected';"
