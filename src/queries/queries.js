@@ -11,6 +11,7 @@ const queries = ()=>{
 	WHEN u.id =1142 THEN "NO APLICA"
 	WHEN u.id =915 THEN "NO APLICA"
 	WHEN u.id =1529 THEN "NO APLICA"
+    WHEN u.id = 1779 THEN "NO APLICA"
 	WHEN DATEDIFF("${TodaysDate}",FROM_UNIXTIME(timeaccess))>=9 THEN CONCAT(DATEDIFF("${TodaysDate}",FROM_UNIXTIME(timeaccess))," Días sin acceder")
 	ELSE "NUNCA"
       END AS ACCESO
