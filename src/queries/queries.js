@@ -66,7 +66,7 @@ const queries = ()=>{
     LEFT JOIN mdl_user_lastaccess lt ON  lt.courseid = c.id AND lt.userid = u.id
     WHERE
     r.roleid = 5
-    AND c.id IN (1321,1322,1323,1324,1325,1327,1326,1328,1329,1330,1331,1332,1333,1335,1336,1334)
+    AND c.id IN (1391,1392,1393,1394,1382,1383,1384,1385,1386,1387,1388,1389,1390,1396,1397,1395)
     AND u.id NOT IN (618)
     AND (DATEDIFF("${TodaysDate}",FROM_UNIXTIME(timeaccess)) >=9 OR DATEDIFF("${TodaysDate}",FROM_UNIXTIME(timeaccess)) IS NULL)
     ORDER BY CURSOS ASC, ALUMNO;`
